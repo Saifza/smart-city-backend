@@ -1,0 +1,10 @@
+C:\Users\saifz\eclipse-workspace\smart-city-management\traffic-service\src\main\java\com\smartcity\traffic\dto\TrafficIncidentDTO.java
+C:\Users\saifz\eclipse-workspace\smart-city-management\traffic-service\src\main\java\com\smartcity\traffic\entity\TrafficIncident.java
+C:\Users\saifz\eclipse-workspace\smart-city-management\traffic-service\src\main\java\com\smartcity\traffic\config\WebSocketConfig.java
+C:\Users\saifz\eclipse-workspace\smart-city-management\traffic-service\src\main\java\com\smartcity\traffic\exception\ValidationExceptionHandler.java
+C:\Users\saifz\eclipse-workspace\smart-city-management\traffic-service\src\main\java\com\smartcity\traffic\service\TrafficIncidentService.java
+C:\Users\saifz\eclipse-workspace\smart-city-management\traffic-service\src\main\java\com\smartcity\traffic\TrafficServiceApplication.java
+C:\Users\saifz\eclipse-workspace\smart-city-management\traffic-service\src\main\java\com\smartcity\traffic\dto\TrafficIncidentHeatmapDTO.java
+C:\Users\saifz\eclipse-workspace\smart-city-management\traffic-service\src\main\java\com\smartcity\traffic\repository\TrafficIncidentRepository.java
+C:\Users\saifz\eclipse-workspace\smart-city-management\traffic-service\src\main\java\com\smartcity\traffic\controller\TrafficIncidentController.java
+C:\Users\saifz\eclipse-workspace\smart-city-management\traffic-service\src\main\java\com\smartcity\traffic\model\Location.java

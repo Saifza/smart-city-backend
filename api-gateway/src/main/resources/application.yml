@@ -1,0 +1,53 @@
+server:
+  port: 9090
+
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: traffic-service
+          uri: lb://TRAFFIC-SERVICE
+          predicates:
+            - Path=/traffic/**
+          filters:
+            - StripPrefix=1
+
+        - id: waste-service
+          uri: lb://WASTE-SERVICE
+          predicates:
+            - Path=/waste/**
+          filters:
+            - StripPrefix=1
+
+        - id: energy-service
+          uri: lb://ENERGY-SERVICE
+          predicates:
+            - Path=/energy/**
+          filters:
+            - StripPrefix=1
+
+        - id: emergency-service
+          uri: lb://EMERGENCY-SERVICE
+          predicates:
+            - Path=/emergency/**
+          filters:
+            - StripPrefix=1
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics  # Add other needed endpoints
+  endpoint:
+    info:
+      enabled: true
+    health:
+      show-details: always
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/

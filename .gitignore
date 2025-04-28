@@ -1,0 +1,26 @@
+# Maven target folder
+/target/
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.bak
+
+# IntelliJ / Eclipse / VSCode settings
+*.iml
+.idea/
+.project
+.classpath
+.settings/
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Application properties (if needed)
+/src/main/resources/application.properties
+/src/main/resources/application.yml
+

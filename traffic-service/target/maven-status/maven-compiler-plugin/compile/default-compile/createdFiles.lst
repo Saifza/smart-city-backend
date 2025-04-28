@@ -1,0 +1,10 @@
+com\smartcity\traffic\config\WebSocketConfig.class
+com\smartcity\traffic\TrafficServiceApplication.class
+com\smartcity\traffic\repository\TrafficIncidentRepository.class
+com\smartcity\traffic\entity\TrafficIncident.class
+com\smartcity\traffic\service\TrafficIncidentService.class
+com\smartcity\traffic\dto\TrafficIncidentDTO.class
+com\smartcity\traffic\dto\TrafficIncidentHeatmapDTO.class
+com\smartcity\traffic\model\Location.class
+com\smartcity\traffic\controller\TrafficIncidentController.class
+com\smartcity\traffic\exception\ValidationExceptionHandler.class

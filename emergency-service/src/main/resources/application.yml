@@ -1,0 +1,22 @@
+server:
+  port: 8084  # ✅ Different port
+
+spring:
+  application:
+    name: emergency-service  # ✅ Correct name
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"    
+   
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    lease-renewal-interval-in-seconds: 5
+    instance-id: ${spring.application.name}:${server.port}  # Unique ID
+    prefer-ip-address: true
