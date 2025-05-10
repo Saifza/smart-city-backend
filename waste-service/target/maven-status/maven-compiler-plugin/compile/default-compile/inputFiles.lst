@@ -1,2 +1,8 @@
-C:\Users\saifz\eclipse-workspace\smart-city-management\waste-service\src\main\java\com\smartcity\controller\WasteController.java
-C:\Users\saifz\eclipse-workspace\smart-city-management\waste-service\src\main\java\com\smartcity\WasteServiceApplication.java
+C:\Users\saifz\eclipse-workspace\smart-city-management\waste-service\src\main\java\com\smartcity\waste\repository\WasteIncidentRepository.java
+C:\Users\saifz\eclipse-workspace\smart-city-management\waste-service\src\main\java\com\smartcity\waste\service\WasteIncidentService.java
+C:\Users\saifz\eclipse-workspace\smart-city-management\waste-service\src\main\java\com\smartcity\waste\WasteServiceApplication.java
+C:\Users\saifz\eclipse-workspace\smart-city-management\waste-service\src\main\java\com\smartcity\waste\dto\WasteIncidentDTO.java
+C:\Users\saifz\eclipse-workspace\smart-city-management\waste-service\src\main\java\com\smartcity\waste\controller\WasteIncidentController.java
+C:\Users\saifz\eclipse-workspace\smart-city-management\waste-service\src\main\java\com\smartcity\waste\entity\Location.java
+C:\Users\saifz\eclipse-workspace\smart-city-management\waste-service\src\main\java\com\smartcity\waste\entity\WasteIncident.java
+C:\Users\saifz\eclipse-workspace\smart-city-management\waste-service\src\main\java\com\smartcity\waste\entity\WasteStatus.java

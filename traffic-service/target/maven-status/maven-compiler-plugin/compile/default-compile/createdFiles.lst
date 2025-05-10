@@ -7,4 +7,5 @@ com\smartcity\traffic\dto\TrafficIncidentDTO.class
 com\smartcity\traffic\dto\TrafficIncidentHeatmapDTO.class
 com\smartcity\traffic\model\Location.class
 com\smartcity\traffic\controller\TrafficIncidentController.class
+com\smartcity\traffic\simulation\SimulationControl.class
 com\smartcity\traffic\exception\ValidationExceptionHandler.class

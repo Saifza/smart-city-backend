@@ -17,7 +17,23 @@ public class EnergyUsageDTO {
     @NotBlank(message = "Status is required")
     private String status;
 
-    // Getters and setters
+    
+    
+    
+    public EnergyUsageDTO() {
+		super();
+	}
+
+	public EnergyUsageDTO(@Min(value = 0, message = "Consumption must be >= 0") double consumptionKwh,
+			@NotNull(message = "Timestamp is required") LocalDateTime timestamp,
+			@NotBlank(message = "Status is required") String status) {
+		super();
+		this.consumptionKwh = consumptionKwh;
+		this.timestamp = timestamp;
+		this.status = status;
+	}
+
+	// Getters and setters
     public double getConsumptionKwh() {
         return consumptionKwh;
     }

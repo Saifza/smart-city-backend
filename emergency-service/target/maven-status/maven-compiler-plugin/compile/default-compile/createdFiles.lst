@@ -1,2 +1,9 @@
-com\smartcity\controller\EmergencyController.class
-com\smartcity\EmergencyServiceApplication.class
+com\smartcity\emergency\entity\Location.class
+com\smartcity\emergency\repository\EmergencyIncidentRepository.class
+com\smartcity\emergency\entity\EmergencyIncident.class
+com\smartcity\emergency\config\WebSocketConfig.class
+com\smartcity\emergency\dto\EmergencyIncidentDTO.class
+com\smartcity\emergency\EmergencyServiceApplication.class
+com\smartcity\emergency\emergency\controller\EmergencyIncidentController.class
+com\smartcity\emergency\service\EmergencyIncidentService.class
+com\smartcity\emergency\simulation\SimulationControl.class

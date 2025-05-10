@@ -1,2 +1,8 @@
-com\smartcity\WasteServiceApplication.class
-com\smartcity\controller\WasteController.class
+com\smartcity\waste\service\WasteIncidentService.class
+com\smartcity\waste\WasteServiceApplication.class
+com\smartcity\waste\dto\WasteIncidentDTO.class
+com\smartcity\waste\entity\WasteIncident.class
+com\smartcity\waste\repository\WasteIncidentRepository.class
+com\smartcity\waste\controller\WasteIncidentController.class
+com\smartcity\waste\entity\Location.class
+com\smartcity\waste\entity\WasteStatus.class

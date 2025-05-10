@@ -28,6 +28,28 @@ public class EnergyUsage {
 	    private String status;
 	    
 	    
+	    
+
+	    public EnergyUsage() {
+			super();
+		}
+
+
+
+
+
+		public EnergyUsage(Long id,
+				@NotNull(message = "Consumption is required") @Min(value = 0, message = "Consumption must be >= 0") double consumptionKwh,
+				@NotNull(message = "Timestamp is required") LocalDateTime timestamp,
+				@NotBlank(message = "Status is required") String status) {
+			super();
+			this.id = id;
+			this.consumptionKwh = consumptionKwh;
+			this.timestamp = timestamp;
+			this.status = status;
+		}
+
+		
 
 		
 

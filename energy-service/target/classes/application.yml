@@ -5,7 +5,8 @@ spring:
   application:
     name: energy-service  # ✅ Correct name
   datasource:
-    url: jdbc:h2:mem:inventorydb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSEriver
+    url: jdbc:h2:mem:inventorydb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    driverClassName: org.h2.Driver
     username: sa
     password:
   h2:
@@ -17,10 +18,20 @@ spring:
       ddl-auto: update
     show-sql: true  
 management:
+  endpoint:
+    health:
+      show-details: always
   endpoints:
     web:
       exposure:
-        include: "*"    
+        include: "*"
+logging:
+  level:
+    com.your.package: DEBUG
+
+
+    
+         
 eureka:
   client:
     register-with-eureka: true

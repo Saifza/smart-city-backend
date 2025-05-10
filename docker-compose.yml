@@ -1,0 +1,73 @@
+services:
+  discovery-server:
+    container_name: discovery-server
+    build:
+      context: ./discovery-server
+    ports:
+      - "8761:8761"
+    restart: unless-stopped
+    networks:
+      - smartnet
+
+  api-gateway:
+    container_name: api-gateway
+    build:
+      context: ./api-gateway
+    ports:
+      - "9090:9090"
+    depends_on:
+      - discovery-server
+    restart: unless-stopped
+    networks:
+      - smartnet
+
+  traffic-service:
+    container_name: traffic-service
+    build:
+      context: ./traffic-service
+    ports:
+      - "8081:8081"
+    depends_on:
+      - discovery-server
+    restart: unless-stopped
+    networks:
+      - smartnet
+
+  waste-service:
+    container_name: waste-service
+    build:
+      context: ./waste-service
+    ports:
+      - "8082:8082"
+    depends_on:
+      - discovery-server
+    restart: unless-stopped
+    networks:
+      - smartnet
+
+  energy-service:
+    container_name: energy-service
+    build:
+      context: ./energy-service
+    ports:
+      - "8083:8083"
+    depends_on:
+      - discovery-server
+    restart: unless-stopped
+    networks:
+      - smartnet
+
+  emergency-service:
+    container_name: emergency-service
+    build:
+      context: ./emergency-service
+    ports:
+      - "8084:8084"
+    depends_on:
+      - discovery-server
+    restart: unless-stopped
+    networks:
+      - smartnet
+
+networks:
+  smartnet:
