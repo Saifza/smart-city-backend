@@ -74,21 +74,74 @@ public class EmergencyIncidentService {
 	        System.out.println("🚨 Simulated emergency incident: " + incident.getDescription() + " in " + city);
 	    }
 	    
+	    private EmergencyIncidentDTO toDTO(EmergencyIncident incident) {
+	        EmergencyIncidentDTO dto = new EmergencyIncidentDTO();
+	        dto.setId(incident.getId());
+	        dto.setType(incident.getType());
+	        dto.setSeverity(incident.getSeverity());
+	        dto.setDescription(incident.getDescription());
+	        dto.setCity(incident.getCity());
+	        dto.setTimestamp(incident.getTimestamp());
+	        dto.setStatus(incident.getStatus());
+            dto.setLocation(incident.getLocation());
+	        
+	   
+
+	        return dto;
+	    };
+
+	    private EmergencyIncident fromDTO(EmergencyIncidentDTO dto) {
+	        EmergencyIncident incident = new EmergencyIncident();
+	        incident.setId(dto.getId()); // Only needed for update, not for new creation
+	        incident.setType(dto.getType());
+	        incident.setSeverity(dto.getSeverity());
+	        incident.setDescription(dto.getDescription());
+	        incident.setCity(dto.getCity());
+	        incident.setTimestamp(dto.getTimestamp());
+	        incident.setStatus(dto.getStatus());
+	        incident.setLocation(dto.getLocation());
+	        return incident;
+	    }
+  
 	    
-    public EmergencyIncident addIncident(EmergencyIncidentDTO dto) {
-        EmergencyIncident incident = new EmergencyIncident();
-        incident.setCity(dto.getCity());
-        incident.setType(dto.getType());
-        incident.setStatus(dto.getStatus());
-        incident.setTimestamp(dto.getTimestamp());
-        return repo.save(incident);
-    }
 
-    public List<EmergencyIncident> getAllIncidents() {
-        return repo.findAll();
-    }
 
-    public List<EmergencyIncident> getIncidentsByCity(String city) {
-        return repo.findByCityIgnoreCase(city);
-    }
+	    public EmergencyIncidentDTO addIncident(EmergencyIncidentDTO dto) {
+	        EmergencyIncident incident = fromDTO(dto);
+	        EmergencyIncident saved = repo.save(incident);
+	        return toDTO(saved);
+	    }
+
+	    public List<EmergencyIncidentDTO> getAllIncidentDTOs() {
+	        return repo.findAll()
+	                   .stream()
+	                   .map(this::toDTO)
+	                   .toList();
+	    }
+
+	    public List<EmergencyIncidentDTO> getIncidentsByCity(String city) {
+	        return repo.findByCityIgnoreCase(city)
+	                   .stream()
+	                   .map(this::toDTO)
+	                   .toList();
+	    }
+        
+	    public void deleteIncident(Long id) {
+	        repo.deleteById(id);
+	    }
+	    
+	    public EmergencyIncidentDTO updateIncident(Long id, EmergencyIncidentDTO dto) {
+	        EmergencyIncident existing = repo.findById(id)
+	            .orElseThrow(() -> new RuntimeException("Incident not found"));
+
+	        existing.setType(dto.getType());
+	        existing.setSeverity(dto.getSeverity());
+	        existing.setDescription(dto.getDescription());
+	        existing.setCity(dto.getCity());
+	        existing.setTimestamp(dto.getTimestamp());
+	        existing.setStatus(dto.getStatus());
+	        existing.setLocation(dto.getLocation());
+	        
+	        return toDTO(repo.save(existing));
+	    }
 }

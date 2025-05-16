@@ -3,13 +3,39 @@ package com.smartcity.waste.dto;
 import java.time.LocalDateTime;
 
 public class WasteIncidentDTO {
+
+    private Long id;
     private String type;
+    private String status;
+    private String city;
+    private String description;
     private double latitude;
     private double longitude;
-    private String status;
-    private String description;
-    private String city;
     private LocalDateTime timestamp;
+
+    public WasteIncidentDTO() {}
+
+    public WasteIncidentDTO(Long id, String type, String status, String city, String description,
+                            double latitude, double longitude, LocalDateTime timestamp) {
+        this.id = id;
+        this.type = type;
+        this.status = status;
+        this.city = city;
+        this.description = description;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.timestamp = timestamp;
+    }
+
+    
+
+    
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
 	public String getType() {
 		return type;
 	}

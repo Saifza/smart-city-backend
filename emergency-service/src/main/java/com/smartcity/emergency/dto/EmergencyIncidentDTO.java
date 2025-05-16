@@ -7,7 +7,9 @@ import java.time.LocalDateTime;
 
 public class EmergencyIncidentDTO {
 
-    @NotBlank
+   private Long id;
+	
+	@NotBlank
     private String type;
 
     @NotBlank
@@ -31,7 +33,7 @@ public class EmergencyIncidentDTO {
     // Constructors
     public EmergencyIncidentDTO() {}
 
-    public EmergencyIncidentDTO(String type, String severity, String description, String city, Location location, LocalDateTime timestamp, String status) {
+    public EmergencyIncidentDTO(Long id, String type, String severity, String description, String city, Location location, LocalDateTime timestamp, String status) {
         this.type = type;
         this.severity = severity;
         this.description = description;
@@ -40,6 +42,16 @@ public class EmergencyIncidentDTO {
         this.timestamp = timestamp;
         this.status=status;
     }
+
+    
+     
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
 
 	public String getType() {
 		return type;
